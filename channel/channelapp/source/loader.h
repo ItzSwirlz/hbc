@@ -9,6 +9,7 @@
 #include "loader_reloc.h"
 #include "appentry.h"
 #include "view.h"
+#include "loader/ld_tcp.h"
 
 typedef enum {
 	LT_UNKNOWN = 0,
@@ -33,11 +34,8 @@ typedef struct {
 void loader_init (void);
 void loader_deinit (void);
 
-void loader_tcp_init (void);
 void loader_signal_threads (void);
 bool loader_gecko_initialized (void);
-bool loader_tcp_initializing (void);
-bool loader_tcp_initialized (void);
 bool loader_handshaked (void);
 
 void loader_load(loader_result *result, view *sub_view, app_entry *entry);
